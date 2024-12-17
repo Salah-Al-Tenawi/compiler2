@@ -1,5 +1,6 @@
 // app.component.ts
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; // استيراد الوحدة CommonModule
 
 interface Product {
   id: number;
@@ -12,7 +13,7 @@ interface Product {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   template: `
     <div class="container">
       <div class="product-list">
@@ -75,30 +76,50 @@ interface Product {
   ],
 })
 export class AppComponent {
-  products: Product[] = [
+  products: Product[] =  [
     {
       id: 1,
-      name: 'Laptop',
-      price: 1000,
-      type: 'Electronics',
-      imageUrl: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQZ6UU6vkJo-GTWIWQvPGZboJpCSH1LTwdcO5qNDuoSXJh9jNkKlLr2FkGjz2cgu8sU_Gp_RTG8kETMh4XEz9foQ-jZZXVtBquedA69KNY',
+      name: 'Apple iPhone 15 Pro',
+      price: 999,
+      type: 'Smartphone',
+      imageUrl: 'https://via.placeholder.com/150/0000FF/FFFFFF?text=iPhone+15+Pro',
     },
     {
       id: 2,
-      name: 'Smartphone',
-      price: 800,
-      type: 'Electronics',
-      imageUrl: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQZ6UU6vkJo-GTWIWQvPGZboJpCSH1LTwdcO5qNDuoSXJh9jNkKlLr2FkGjz2cgu8sU_Gp_RTG8kETMh4XEz9foQ-jZZXVtBquedA69KNY',
+      name: 'Samsung Galaxy S23 Ultra',
+      price: 1199,
+      type: 'Smartphone',
+      imageUrl: 'https://via.placeholder.com/150/FF0000/FFFFFF?text=Galaxy+S23+Ultra',
     },
     {
       id: 3,
-      name: 'Shoes',
-      price: 120,
-      type: 'Fashion',
-      imageUrl: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQZ6UU6vkJo-GTWIWQvPGZboJpCSH1LTwdcO5qNDuoSXJh9jNkKlLr2FkGjz2cgu8sU_Gp_RTG8kETMh4XEz9foQ-jZZXVtBquedA69KNY',
+      name: 'Google Pixel 8 Pro',
+      price: 899,
+      type: 'Smartphone',
+      imageUrl: 'https://via.placeholder.com/150/008000/FFFFFF?text=Pixel+8+Pro',
+    },
+    {
+      id: 4,
+      name: 'OnePlus 11',
+      price: 699,
+      type: 'Smartphone',
+      imageUrl: 'https://via.placeholder.com/150/FFA500/FFFFFF?text=OnePlus+11',
+    },
+    {
+      id: 5,
+      name: 'Xiaomi 13 Pro',
+      price: 799,
+      type: 'Smartphone',
+      imageUrl: 'https://via.placeholder.com/150/800080/FFFFFF?text=Xiaomi+13+Pro',
+    },
+    {
+      id: 6,
+      name: 'Sony Xperia 1 V',
+      price: 1299,
+      type: 'Smartphone',
+      imageUrl: 'https://via.placeholder.com/150/FFC0CB/FFFFFF?text=Xperia+1+V',
     },
   ];
-
   selectedProduct: Product | null = null;
 
   selectProduct(product: Product): void {
